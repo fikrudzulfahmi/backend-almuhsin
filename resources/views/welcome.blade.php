@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Backend - Almuhsin Universe</title>
+    <title>Core Backend API - Almuhsin Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
         /* Mendaftarkan Color Palette dari Logo Almuhsin Universe */
@@ -54,7 +54,6 @@
 
         .logo-wrapper img {
             width: 100px;
-            /* Sesuaikan ukuran logo jika diperlukan */
             height: auto;
             margin-bottom: 1.5rem;
         }
@@ -120,7 +119,6 @@
 
         .btn-primary:hover {
             background-color: #344ec7;
-            /* Biru yang lebih gelap saat di-hover */
             transform: translateY(-2px);
             box-shadow: 0 6px 20px rgba(69, 98, 229, 0.35);
         }
@@ -161,15 +159,15 @@
 
         <div class="status-badge">
             <span class="status-dot"></span>
-            System Online & Ready
+            Service Online & Ready
         </div>
 
         <h1>Almuhsin Universe</h1>
-        <p>Sistem backend core API sedang berjalan dengan lancar. Menunggu instruksi dan request dari aplikasi client.</p>
+        <p>Ini adalah halaman resmi Core Backend API untuk aplikasi berbasis web. Server ini berfungsi sebagai pusat kendali data, keamanan enkripsi, dan penyedia layanan Web Service yang berjalan secara optimal.</p>
 
         <!-- <div class="btn-group">
-            <div class="btn btn-primary">Core API Active</div>
-            <div class="btn btn-secondary">Laravel 11.x & PHP 8.2</div>
+            <div class="btn btn-primary">Core API Gateway Active</div>
+            <div class="btn btn-secondary">Laravel 11.x Engine</div>
         </div> -->
     </div>
 
