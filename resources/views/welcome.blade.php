@@ -4,16 +4,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>API Backend - Pesantren</title>
+    <title>API Backend - Almuhsin Universe</title>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <style>
-        /* Mendaftarkan Color Palette dari gambar kamu */
+        /* Mendaftarkan Color Palette dari Logo Almuhsin Universe */
         :root {
-            --color-light-green: #C1E899;
-            --color-brown: #9A6735;
-            --color-pale-green: #E6F0DC;
-            --color-dark-green: #55883B;
-            --text-main: #333333;
+            --color-primary: #4562E5;
+            /* Biru terang sesuai logo */
+            --color-bg: #F4F7FF;
+            /* Biru sangat muda/putih untuk background */
+            --color-accent: #E1E8FF;
+            /* Biru muda untuk aksen badge */
+            --text-dark: #1E293B;
+            /* Abu-abu gelap untuk teks utama */
+            --text-muted: #64748B;
+            /* Abu-abu kalem untuk teks deskripsi */
         }
 
         * {
@@ -24,68 +29,71 @@
         }
 
         body {
-            background-color: var(--color-pale-green);
+            background-color: var(--color-bg);
             display: flex;
             justify-content: center;
             align-items: center;
             min-height: 100vh;
-            /* Pola titik-titik samar untuk background agar tidak terlalu sepi */
-            background-image: radial-gradient(var(--color-light-green) 1.5px, transparent 1.5px);
-            background-size: 25px 25px;
+            /* Pola grid modern yang samar di background */
+            background-image: linear-gradient(var(--color-accent) 1px, transparent 1px),
+                linear-gradient(90deg, var(--color-accent) 1px, transparent 1px);
+            background-size: 30px 30px;
         }
 
         .card {
             background: #ffffff;
-            padding: 3rem 2rem;
+            padding: 3.5rem 2.5rem;
             border-radius: 24px;
-            box-shadow: 0 15px 35px rgba(85, 136, 59, 0.15);
+            box-shadow: 0 20px 40px rgba(69, 98, 229, 0.08);
             text-align: center;
-            max-width: 450px;
+            max-width: 480px;
             width: 90%;
-            border-top: 8px solid var(--color-dark-green);
+            border-top: 6px solid var(--color-primary);
             position: relative;
         }
 
-        .icon-wrapper {
-            font-size: 3.5rem;
-            margin-bottom: 1rem;
-            display: inline-block;
+        .logo-wrapper img {
+            width: 100px;
+            /* Sesuaikan ukuran logo jika diperlukan */
+            height: auto;
+            margin-bottom: 1.5rem;
         }
 
         .status-badge {
             display: inline-flex;
             align-items: center;
-            background-color: var(--color-light-green);
-            color: var(--color-dark-green);
-            padding: 0.4rem 1.2rem;
+            background-color: var(--color-accent);
+            color: var(--color-primary);
+            padding: 0.5rem 1.2rem;
             border-radius: 50px;
             font-size: 0.85rem;
             font-weight: 600;
             margin-bottom: 1.5rem;
+            letter-spacing: 0.5px;
         }
 
         /* Animasi titik berkedip */
         .status-dot {
-            width: 10px;
-            height: 10px;
-            background-color: var(--color-dark-green);
+            width: 8px;
+            height: 8px;
+            background-color: var(--color-primary);
             border-radius: 50%;
             margin-right: 8px;
             animation: pulse 2s infinite;
         }
 
         h1 {
-            color: var(--color-dark-green);
+            color: var(--text-dark);
             font-size: 1.8rem;
             font-weight: 700;
             margin-bottom: 0.5rem;
         }
 
         p {
-            color: #666;
+            color: var(--text-muted);
             font-size: 0.95rem;
             line-height: 1.6;
-            margin-bottom: 2rem;
+            margin-bottom: 2.5rem;
         }
 
         .btn-group {
@@ -96,50 +104,49 @@
 
         .btn {
             text-decoration: none;
-            padding: 0.8rem 1.5rem;
+            padding: 0.85rem 1.5rem;
             border-radius: 12px;
             font-weight: 600;
             font-size: 0.95rem;
             transition: all 0.3s ease;
             cursor: default;
-            /* Karena ini cuma tampilan, bukan link betulan */
         }
 
         .btn-primary {
-            background-color: var(--color-dark-green);
+            background-color: var(--color-primary);
             color: #ffffff;
-            box-shadow: 0 4px 15px rgba(85, 136, 59, 0.3);
+            box-shadow: 0 4px 15px rgba(69, 98, 229, 0.25);
         }
 
         .btn-primary:hover {
-            background-color: var(--color-brown);
-            transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(154, 103, 53, 0.4);
+            background-color: #344ec7;
+            /* Biru yang lebih gelap saat di-hover */
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(69, 98, 229, 0.35);
         }
 
         .btn-secondary {
             background-color: transparent;
-            color: var(--color-brown);
-            border: 2px solid var(--color-brown);
+            color: var(--color-primary);
+            border: 2px solid var(--color-accent);
         }
 
         .btn-secondary:hover {
-            background-color: var(--color-light-green);
-            border-color: var(--color-light-green);
-            color: var(--color-dark-green);
+            background-color: var(--color-accent);
+            border-color: var(--color-primary);
         }
 
         @keyframes pulse {
             0% {
-                box-shadow: 0 0 0 0 rgba(85, 136, 59, 0.7);
+                box-shadow: 0 0 0 0 rgba(69, 98, 229, 0.5);
             }
 
             70% {
-                box-shadow: 0 0 0 8px rgba(85, 136, 59, 0);
+                box-shadow: 0 0 0 6px rgba(69, 98, 229, 0);
             }
 
             100% {
-                box-shadow: 0 0 0 0 rgba(85, 136, 59, 0);
+                box-shadow: 0 0 0 0 rgba(69, 98, 229, 0);
             }
         }
     </style>
@@ -148,20 +155,20 @@
 <body>
 
     <div class="card">
-        <div class="icon-wrapper">
-            🌿
+        <div class="logo-wrapper">
+            <img src="{{ asset('logo.png') }}" alt="Almuhsin Universe Logo">
         </div>
 
         <div class="status-badge">
             <span class="status-dot"></span>
-            System Online & Running
+            System Online & Ready
         </div>
 
-        <h1>API Pesantren</h1>
-        <p>Selamat datang! Sistem backend administrasi pondok pesantren sedang berjalan dengan lancar. Siap menerima request dari Frontend.</p>
+        <h1>Almuhsin Universe</h1>
+        <p>Sistem backend core API sedang berjalan dengan lancar. Menunggu instruksi dan request dari aplikasi client.</p>
 
         <!-- <div class="btn-group">
-            <div class="btn btn-primary">Uji Endpoint di Postman</div>
+            <div class="btn btn-primary">Core API Active</div>
             <div class="btn btn-secondary">Laravel 11.x & PHP 8.2</div>
         </div> -->
     </div>
