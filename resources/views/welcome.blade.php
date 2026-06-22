@@ -160,10 +160,10 @@
         <h1>API Pesantren</h1>
         <p>Selamat datang! Sistem backend administrasi pondok pesantren sedang berjalan dengan lancar. Siap menerima request dari Frontend.</p>
 
-        <div class="btn-group">
+        <!-- <div class="btn-group">
             <div class="btn btn-primary">Uji Endpoint di Postman</div>
             <div class="btn btn-secondary">Laravel 11.x & PHP 8.2</div>
-        </div>
+        </div> -->
     </div>
 
 </body>
