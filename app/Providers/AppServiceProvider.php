@@ -20,7 +20,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Gate::define('viewApiDocs', function ($user = null) {
+        \Illuminate\Support\Facades\Gate::define('viewApiDocs', function () {
             return true;
         });
     }
