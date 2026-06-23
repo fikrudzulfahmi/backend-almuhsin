@@ -3,7 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use Dedoc\Scramble\Scramble;
+use Illuminate\Support\Facades\Gate;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -20,8 +20,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Scramble::auth(function ($request) {
-            // return true artinya siapa saja boleh membuka halaman /docs ini
+        Gate::define('viewApiDocs', function ($user = null) {
+            // return true artinya semua orang (bahkan tanpa login) bisa akses /docs
             return true;
         });
     }
