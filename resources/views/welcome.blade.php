@@ -166,10 +166,10 @@
         <h1>Almuhsin Universe</h1>
         <p>Ini adalah halaman resmi Core Backend API untuk aplikasi berbasis web. Server ini berfungsi sebagai pusat kendali data, keamanan enkripsi, dan penyedia layanan Web Service yang berjalan secara optimal.</p>
 
-        <!-- <div class="btn-group">
-            <div class="btn btn-primary">Core API Gateway Active</div>
-            <div class="btn btn-secondary">Laravel 11.x Engine</div>
-        </div> -->
+        <div class="btn-group">
+            <a href="/docs" class="btn btn-primary">Buka API Documentation & Tester</a>
+            <!-- <div class="btn btn-secondary">Laravel 11.x Engine</div> -->
+        </div>
     </div>
 
 </body>
